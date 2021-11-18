@@ -1,10 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PredicateGenerator : MonoBehaviour
 {
-    private string _predicate;
+    [SerializeField] private Accelerometr _accelerometr;
+    [SerializeField] private TMP_Text _text;
+
+    private void OnEnable()
+    {
+        _accelerometr.Shaked += ShowPredicate;
+    }
+
+    private void OnDisable()
+    {
+        _accelerometr.Shaked -= ShowPredicate;
+    }
 
     private string[] _allPredicates = new string[]
     {
@@ -33,9 +46,10 @@ public class PredicateGenerator : MonoBehaviour
         "Весьма сомнительно"
     };
 
-    private void Start()
+    
+    private void ShowPredicate()
     {
-        print(GeneratePredicate());
+        _text.text = GeneratePredicate();
     }
 
     private string GeneratePredicate()
