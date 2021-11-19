@@ -9,10 +9,12 @@ public class Accelerometr : MonoBehaviour
     public event UnityAction Shaked;
 
     private int _shakeCount;
+    private bool _isFinish;
 
     private void FixedUpdate()
     {
-        ShakePhone();
+        if (_isFinish == false)
+            ShakePhone();
     }
 
     private void ShakePhone()
@@ -22,11 +24,11 @@ public class Accelerometr : MonoBehaviour
             //print(Input.acceleration.x);
             //print(_shakeCount);
             _shakeCount++;
-            if (_shakeCount >= 15)
+            if (_shakeCount >= 10)
             {
+                _isFinish = true;
                 Handheld.Vibrate();
                 Shaked?.Invoke();
-                _shakeCount = 0;
             }
         }
     }
