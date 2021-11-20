@@ -35,7 +35,7 @@ public class ShowerAnswer : MonoBehaviour
     private IEnumerator ShowText(float duration)
     {
         var s = new WaitForSeconds(duration);
-        float step = 100;
+        float step = 150;
 
         for (int i = 0; i < step; i++)
         {
