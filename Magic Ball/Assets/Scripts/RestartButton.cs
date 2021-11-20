@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(Image))]
 public class RestartButton : MonoBehaviour
 {
     [SerializeField] private Button _restartButton;

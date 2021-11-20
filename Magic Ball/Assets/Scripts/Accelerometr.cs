@@ -9,7 +9,9 @@ public class Accelerometr : MonoBehaviour
 {
     public event UnityAction Shaked;
 
-    private int _shakeCount;
+    private int _shakeNumber = 12;
+    private int _shakeCounter;
+
     private bool _isFinish;
 
     private AudioSource _audioSource;
@@ -29,8 +31,8 @@ public class Accelerometr : MonoBehaviour
     {
         if (Mathf.Abs(Input.acceleration.y) > 1.7f)
         {
-            _shakeCount++;
-            if (_shakeCount >= 12)
+            _shakeCounter++;
+            if (_shakeCounter >= _shakeNumber)
             {
                 _isFinish = true;
                 Handheld.Vibrate();
