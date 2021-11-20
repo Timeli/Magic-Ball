@@ -35,8 +35,8 @@ public class Accelerometr : MonoBehaviour
             if (_shakeCounter >= _shakeNumber)
             {
                 _isFinish = true;
-                Handheld.Vibrate();
                 _audioSource.Play();
+
                 Shaked?.Invoke();
             }
         }
