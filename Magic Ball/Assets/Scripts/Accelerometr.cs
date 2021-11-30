@@ -16,16 +16,19 @@ public class Accelerometr : MonoBehaviour
 
     private AudioSource _audioSource;
 
+
     private void Start()
     {
         _audioSource = GetComponent<AudioSource>();
     }
+
 
     private void FixedUpdate()
     {
         if (_isFinish == false)
             ShakePhone();
     }
+
 
     private void ShakePhone()
     {
