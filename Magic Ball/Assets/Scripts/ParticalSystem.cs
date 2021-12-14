@@ -32,7 +32,7 @@ public class ParticalSystem : MonoBehaviour
     {
         var velocityOverLifetime = _particleSystem.velocityOverLifetime;
         velocityOverLifetime.orbitalZ = 0f;
-        velocityOverLifetime.z = -5f;
+        velocityOverLifetime.z = -10f;
     }
 
 }
